@@ -30,8 +30,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "path/to/scripts/file1.js",
-              "path/to/scripts/file2.js"
+              
+              
           ]
           },
           "configurations": {

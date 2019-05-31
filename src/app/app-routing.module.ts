@@ -8,6 +8,7 @@ import { FaqComponent } from './faq/faq.component';
 import { SignupComponent } from './signup/signup.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { NewComponent } from './new/new.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'gallery', component:GalleryComponent},
   {path: 'signup', component:SignupComponent},
   {path: 'new', component: NewComponent},
+  {path: 'login',component: LoginComponent},
 ];
 
 @NgModule({

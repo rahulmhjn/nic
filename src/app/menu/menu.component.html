@@ -78,8 +78,18 @@
                   <a class="nav-link" routerLink="/contact">Contact</a>
                 </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-          <button class="btn btn-outline-success my-2 my-sm-0" routerLink = '/signup'>SignUp</button>
-        </form>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item right" *ngIf="!loggedIn">
+              <button class="btn btn-outline-light px-5" routerLink="/signup">Signup</button>
+          </li>&nbsp;
+          <li class="nav-item right" *ngIf="!loggedIn">
+              <button class="btn btn-outline-light px-5" routerLink="/login">Login</button>
+          </li>
+          <li class="nav-item right" *ngIf="loggedIn">
+            <a class="nav-link" routerLink="/" (click)="logout()">Log Out</a>
+          </li>
+        </ul>
+      
+        
     </div>
   </nav>

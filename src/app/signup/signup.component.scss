@@ -1,0 +1,28 @@
+.background-left {
+    background-color: whitesmoke;
+    background-image: url('/assets/Sign-Up-BG-Image.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left-bottom;
+}
+
+.background-right {
+    background-color: whitesmoke;
+}
+
+.card {
+    background-color: transparent;
+    color: #fff;
+}
+
+.text-muted {
+    color: black !important;
+}
+
+.btn[type=submit]{
+    border-radius: 50px;
+}
+
+h5 {
+    color: black;
+}

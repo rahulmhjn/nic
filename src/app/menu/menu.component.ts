@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
+
+import { first } from 'rxjs/operators';
+
+import { User } from '../_models';
+import { UserService } from '../_services';
 
 @Component({
   selector: 'app-menu',
@@ -9,36 +12,32 @@ import 'firebase/auth';
 })
 export class MenuComponent implements OnInit {
 
-  loggedIn: boolean = false;
-  user:any;
+ 
+  currentUser: User;
+  users: User[] = [];
 
-  constructor() { 
-    this.user = firebase.auth().currentUser;
-    if(this.user){
-      this.loggedIn = true;
-    }
-    else{
-      this.loggedIn = false;
-    }
-
-    firebase.auth().onAuthStateChanged((user)=>{
-      this.user = user;
-      if(user){
-        this.loggedIn = true;
-      }
-      else{
-        this.loggedIn = false;
-      }
-
-    })
+  constructor(private userService: UserService) { 
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
+    // this.loadAllUsers();
   }
 
-  logout(){
-    firebase.auth().signOut();
-  }
+  deleteUser(id: number) {
+    this.userService.delete(id).pipe(first()).subscribe(() => { 
+        this.loadAllUsers() 
+    });
+}
+
+private loadAllUsers() {
+    this.userService.getAll().pipe(first()).subscribe(users => { 
+        this.users = users; 
+    });
+}
+refresh(){
+  window.location = window.location;
+}
 
 
 }

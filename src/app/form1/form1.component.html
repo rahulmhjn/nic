@@ -1,0 +1,42 @@
+<div class="row background">
+  <div class="offset-sm-4 col-sm-4">
+    <div class="card text-blank border-0">
+      <div class="card-body">
+        <div class="card-title text-center">
+          <h5></h5>
+        </div>
+        <div class="card-text">
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Enter the description" [formControl]="myForm.controls['description']">
+            </div>
+            <div class="alert alert-danger" *ngIf="!myForm.controls['description'].valid && myForm.controls['description'].touched">
+                Description is required.
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Enter the datacenter_location" [formControl]="myForm.controls['datacenter_location']">
+            </div>
+            <div class="alert alert-danger" *ngIf="!myForm.controls['datacenter_location'].valid && myForm.controls['datacenter_location'].touched">
+                Datacenter Location is required.
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Enter the label" [formControl]="myForm.controls['label']">
+            </div>
+            <div class="alert alert-danger" *ngIf="!myForm.controls['label'].valid && myForm.controls['label'].touched">
+                Label is required.
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-block btn-primary" [disabled] = "!myForm.valid">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="alert alert-success" *ngIf = "message.length>0">
+            {{message}}
+          </div>
+          <div class="alert alert-danger" *ngIf = "userError">
+            {{userError.message}}
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

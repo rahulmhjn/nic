@@ -1,0 +1,10 @@
+{
+    "/api": {
+        "target": "https://vra.vmware.lab",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel" : "debug",
+        "pathRewrite": {"^/api":""}
+    }
+
+}

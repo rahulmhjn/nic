@@ -110,7 +110,7 @@
 </div>
 <hr>
 
-<div class="grid-container">
+<div class="grid-container" *ngIf="!currentUser">
 
 <div class="card">
 
@@ -197,4 +197,101 @@
 
 
 </div>
+
+<div class="grid-container" *ngIf= "currentUser">
+
+  <div class="card">
+  
+   <div class="container">
+      <img src="assets/img/storage.jpg" alt="face">
+     <h3 class="h3"><b>LinuxAppRHEL</b></h3> 
+     <p class="p">Business Group   B01</p>
+     <p class="p">Service  S01</p>
+      <!-- <a class="bttn-more" href = "https://vra.vmware.lab/vcac/#csp.cs.ui.catalog.request%5BrouteParams:=51f647a9-c7a5-4d31-bdaa-a82462bf02f6%252Ceca2c97e-9cf0-46db-8f90-07b286bd299e%252Ciaasact@vmware.lab">Request</a> -->
+      <button class="bttn-more" (click) = "catalog('51f647a9-c7a5-4d31-bdaa-a82462bf02f6')">Request</button>
+   </div>
+  </div>
+  <div class="card"> 
+        <div class="container">
+            <img src="assets/img/load.jpg" alt="face">
+        <h3 class="h3">LinuxDBMariaDBRHEL</h3>
+        <p class="p">Business Group   B01</p>
+        <p class="p">Service  S01</p>
+        <!-- <a class="bttn-more" href = "https://vra.vmware.lab/vcac/#csp.cs.ui.catalog.request%5BrouteParams:=3189b7a5-ffe4-4aaf-a65e-a0ffbb9d23ef%252Ceca2c97e-9cf0-46db-8f90-07b286bd299e%252Ciaasact@vmware.lab">Request</a> -->
+        <button class="bttn-more" (click) = "catalog('3189b7a5-ffe4-4aaf-a65e-a0ffbb9d23ef')">Request</button>
+      </div>
+        </div>
+  <div class="card">        
+        <div class="container">
+            <img src="assets/img/anti.jpg" alt="face">
+            <h3 class="h3"><b>LinuxDBPostgresRHEL</b></h3> 
+            <p class="p">Business Group   B01</p>
+            <p class="p">Service  S01</p>
+            <!-- <a class="bttn-more" href = "https://vra.vmware.lab/vcac/#csp.cs.ui.catalog.request%5BrouteParams:=3f3fcfd9-7d58-4640-b1b9-6abcbe8e1f78%252Ceca2c97e-9cf0-46db-8f90-07b286bd299e%252Ciaasact@vmware.lab">Request</a> -->
+            <button class="bttn-more" (click) = "catalog('3f3fcfd9-7d58-4640-b1b9-6abcbe8e1f78')">Request</button>
+          </div>
+        </div>
+  <div class="card">        
+        <div class="container">
+            <img src="assets/img/ip.jpg" alt="face">
+            <h3 class="h3"><b>LinuxWebAppRHEL</b></h3> 
+            <p class="p">Business Group   B01</p>
+            <p class="p">Service  S01</p>
+            <!-- <a class="bttn-more" href = "https://vra.vmware.lab/vcac/#csp.cs.ui.catalog.request%5BrouteParams:=c7fb4b43-da10-45f9-9fc3-f64c84d95c41%252Ceca2c97e-9cf0-46db-8f90-07b286bd299e%252Ciaasact@vmware.lab">Request</a> -->
+            <button class="bttn-more" (click) = "catalog('c7fb4b43-da10-45f9-9fc3-f64c84d95c41')">Request</button>
+          </div>
+        </div>
+  <div class="card">        
+        <div class="container">
+            <img src="assets/img/rm.jpg" alt="face">
+            <h3 class="h3"><b>LinuxWebRHEL</b></h3> 
+            <p class="p">Business Group   B01</p>
+            <p class="p">Service  S01</p>
+            <!-- <a class="bttn-more" href = "https://vra.vmware.lab/vcac/#csp.cs.ui.catalog.request%5BrouteParams:=067fcaec-0044-4353-a4bf-f44b3981bf96%252Ceca2c97e-9cf0-46db-8f90-07b286bd299e%252Ciaasact@vmware.lab">Request</a> -->
+            <button class="bttn-more" (click) = "catalog('067fcaec-0044-4353-a4bf-f44b3981bf96')">Request</button>
+          </div>
+        </div>
+  <div class="card">        
+        <div class="container">
+            <img src="assets/img/va.jpg" alt="face">
+            <h3 class="h3"><b>WIN 2016</b></h3> 
+            <p class="p">Business Group   B01</p>
+            <p class="p">Service  S01</p>
+            <!-- <a class="bttn-more" href = "https://vra.vmware.lab/vcac/#csp.cs.ui.catalog.request%5BrouteParams:=f97a2efa-890c-4297-b0ba-d4599d31eb55%252Ceca2c97e-9cf0-46db-8f90-07b286bd299e%252Ciaasact@vmware.lab">Request</a> -->
+            <button class="bttn-more" (click) = "catalog('f97a2efa-890c-4297-b0ba-d4599d31eb55')">Request</button>
+          </div>
+        </div>
+  <div class="card">        
+        <div class="container">
+            <img src="assets/img/waf.jpg" alt="face">
+            <h3 class="h3"><b>Windows</b></h3> 
+            <p class="p">Business Group   B01</p>
+            <p class="p">Service  S01</p>
+            <!-- <a class="bttn-more" href = "https://vra.vmware.lab/vcac/#csp.cs.ui.catalog.request%5BrouteParams:=36330e6a-2846-414b-bde8-356f7b75a4fb%252Ceca2c97e-9cf0-46db-8f90-07b286bd299e%252Ciaasact@vmware.lab">Request</a> -->
+            <button class="bttn-more" (click) = "catalog('36330e6a-2846-414b-bde8-356f7b75a4fb')">Request</button>
+          </div>
+        </div>
+  <div class="card">        
+        <div class="container">
+            <img src="assets/img/backup.jpg" alt="face">
+            <h3 class="h3"><b>WindowsDBSQLExpress17Windows</b></h3> 
+            <p class="p">Business Group   B01</p>
+            <p class="p">Service  S01</p>
+            <!-- <a class="bttn-more" href = "https://vra.vmware.lab/vcac/#csp.cs.ui.catalog.request%5BrouteParams:=c0bade10-62d3-4545-8626-406b589beed3%252Ceca2c97e-9cf0-46db-8f90-07b286bd299e%252Ciaasact@vmware.lab">Request</a> -->
+            <button class="bttn-more" (click) = "catalog('c0bade10-62d3-4545-8626-406b589beed3')">Request</button>
+          </div>
+        </div>
+  <div class="card">        
+        <div class="container">
+            <img src="assets/img/apm.jpg" alt="face">
+            <h3 class="h3"><b>WindowsIIS10Windows2016DataCenter</b></h3> 
+            <p class="p">Business Group   B01</p>
+            <p class="p">Service  S01</p>
+            <!-- <a class="bttn-more" href = "https://vra.vmware.lab/vcac/#csp.cs.ui.catalog.request%5BrouteParams:=af9b2280-779e-485b-805e-f2fe20ff466a%252Ceca2c97e-9cf0-46db-8f90-07b286bd299e%252Ciaasact@vmware.lab">Request</a> -->
+            <button class="bttn-more" (click) = "catalog('af9b2280-779e-485b-805e-f2fe20ff466a')">Request</button>
+          </div>
+        </div>
+  
+  
+  </div>
 

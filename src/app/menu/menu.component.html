@@ -57,7 +57,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/home"*ngIf="!currentUser">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/catalog"*ngIf="currentUser">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/about">About</a>
@@ -79,15 +82,19 @@
                 </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-          <li class="nav-item right" *ngIf="!loggedIn">
+          <!-- <li class="nav-item right" *ngIf="!loggedIn">
               <button class="btn btn-outline-light px-5" routerLink="/signup">Signup</button>
-          </li>&nbsp;
-          <li class="nav-item right" *ngIf="!loggedIn">
+          </li>&nbsp; -->
+          <li class="nav-item right" *ngIf="!currentUser">
               <button class="btn btn-outline-light px-5" routerLink="/login">Login</button>
           </li>
-          <li class="nav-item right" *ngIf="loggedIn">
-            <a class="nav-link" routerLink="/" (click)="logout()">Log Out</a>
-          </li>
+          
+          <li class="nav-item right" *ngIf="currentUser">
+            <button class="btn btn-outline-light px-5">Hello {{currentUser.firstName}}</button>
+        </li>
+          <li class="nav-item right" *ngIf="currentUser">
+            <button class="btn btn-outline-light px-5" routerLink="/login" (click)="refresh()">Logout</button>
+        </li>
         </ul>
       
         
